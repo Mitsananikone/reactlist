@@ -1,10 +1,10 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 
 
-const ATMDeposit = ({onChange, handleSubmit, status}) => {
+const ATMDeposit = ({onChange, handleSubmit}) => {
   return (
     <label className="label huge">
       Deposit:
@@ -26,7 +26,7 @@ const Account = () => {
     transactionState = Number(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     totalState += transactionState;
     status = `Account Balance $ ${totalState}`;
     document.getElementById("total").innerHTML = status;
